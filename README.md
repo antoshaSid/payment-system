@@ -1,3 +1,4 @@
+![Background](./images/img.png)
 # Simple Payment System
 
 This project is a Spring Boot application that interacts with Kafka, Zookeeper, and PostgreSQL. The setup and execution are managed using Docker Compose. This README provides instructions for setting up, running the application, and executing tests.
