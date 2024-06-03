@@ -14,7 +14,7 @@
     <packaging>pom</packaging>
 
     <name>payment-system</name>
-    <description>Payment System</description>
+    <description>Simple Payment System</description>
 
     <modules>
         <module>user-balance-service</module>

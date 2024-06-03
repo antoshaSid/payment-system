@@ -1,4 +1,4 @@
-# User Balance Service
+# Simple Payment System
 
 This project is a Spring Boot application that interacts with Kafka, Zookeeper, and PostgreSQL. The setup and execution are managed using Docker Compose. This README provides instructions for setting up, running the application, and executing tests.
 
@@ -7,7 +7,7 @@ This project is a Spring Boot application that interacts with Kafka, Zookeeper, 
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/antoshaSid/payment-system.git
+git clone https://github.com/antoshaSid/simple-payment-system.git
 cd user-balance-service
 ```
 
@@ -144,9 +144,10 @@ docker-compose down
 
 ## Possible improvements
 1. Add more Kafka Broker instances to make the system more fault-tolerant and high-available (increase replication factor). We can easily scale the Kafka cluster by adding more brokers with Docker Compose.
-2. Write native SQL queries to improve the performance of the database operations. Currently, the application updates each user's balance individually. We can use a bulk update query to minimize database interactions.
-3. Implement a retry mechanism for failed execution jobs. For instance, we can implement Dead letter queue (DLQ) to store failed jobs and retry them later.
-4. Increase the test coverage by adding more unit and integration tests to ensure all parts of the application are thoroughly tested.
-5. Implement more robust error handling mechanisms to capture and manage different types of errors. For example, we can expand a global exception handler to avoid returning stack traces to the client.
+2. Reconsider the number of partitions. We can increase the number of partitions to improve the parallelism of the application, but it requires thorough testing of diverse scenarios.
+3. Write native SQL queries to improve the performance of the database operations. Currently, the application updates each user's balance individually. We can use a bulk update query to minimize database interactions.
+4. Implement a retry mechanism for failed execution jobs. For instance, we can implement Dead letter queue (DLQ) to store failed jobs and retry them later.
+5. Increase the test coverage by adding more unit and integration tests to ensure all parts of the application are thoroughly tested.
+6. Implement more robust error handling mechanisms to capture and manage different types of errors. For example, we can expand a global exception handler to avoid returning stack traces to the client.
 
 
